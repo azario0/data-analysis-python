@@ -1,0 +1,72 @@
+Data Analysis with Python - Brief Notes
+##################################################################
+What is Data Analysis?
+Collecting, cleaning, interpreting, and visualizing data to extract insights and make informed decisions.
+##################################################################
+Why Python?
+Simple and readable.
+Extensive ecosystem of libraries (pandas, numpy, plotly, matplotlib, seaborn...).
+##################################################################
+Jupyter Notebook
+Interactive environment for running Python code in cells.
+Ideal for data analysis:
+Documenting the process.
+Visualizing results immediately.
+Iteratively refining code and analysis.
+##################################################################
+Common Data Analysis Tasks in Python
+
+Data Loading and Cleaning: Importing data from various sources and addressing missing or inconsistent data.
+
+Data Exploration: Summarizing data, identifying patterns, and visualizing distributions.
+
+Data Manipulation: Transforming data through operations like filtering, grouping, and aggregation.
+##################################################################
+Data Loading and Cleaning
+Importing data from various sources.
+Handling missing values and inconsistencies.
+Example:
+
+Reading a CSV file: df = pd.read_csv('example_data.csv')
+
+Filling missing values: df['Age'] = df['Age'].fillna(mean_age)
+
+Removing unwanted characters and converting to numeric: df['Salary'] = df['Salary'].str.replace(' Dzd', '')
+
+Renaming columns: df.rename(columns={'Salary': 'Salary (Dzd)'}, inplace=True)
+
+Always remember to keep the important informations of the data
+##################################################################
+Data Exploration
+Summarizing data.
+Identifying patterns.
+Visualizing distributions.
+Example:
+
+Basic inspection: df.head(), df.info()
+
+Creating visualizations:
+
+Bar plot: plt.bar(df['Name'], df['Salary'])
+
+Histogram: plt.hist(df['Age'])
+
+Scatter plot: plt.scatter(df['Age'], df['Salary'])
+
+Line plot: plt.plot(df['Age'], df['Salary'])
+
+Pie chart: plt.pie(df['City'].value_counts())
+##################################################################
+Data Manipulation
+Transforming data through operations like filtering, grouping, and aggregation.
+
+Example:
+
+Filtering: filtered_df = df[df['Age'] > 30]
+
+Grouping: grouped_df = df.groupby('Department')['Salary'].mean()
+
+Aggregation: agg_df = df.groupby('Department').agg(avg_salary=('Salary', 'mean'), max_salary=('Salary', 'max'))
+
+Sorting: sorted_df = df.sort_values(by='Salary', ascending=False)
+
